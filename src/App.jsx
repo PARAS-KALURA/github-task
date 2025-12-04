@@ -70,11 +70,13 @@ const App = () => {
 <input
   value={input}
   onChange={(e) => setInput(e.target.value)}
-  onKeyDown={(e) => {
-    if (e.key === "Enter") {
-      handleAddTask();
-    }
-  }}
+  
+onKeyDown={(e) => {
+  if(e.key === "Enter") {
+    handleAddTask();
+  }
+}}
+
   style={{
     color: "white",
     padding: "12px",
