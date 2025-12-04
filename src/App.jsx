@@ -67,13 +67,15 @@ const App = () => {
         </div>
 
         <div>
-
-        <input
-        value={setInput}
-        onChange={(e) => {
-            setInput(e.target.value)
-        }}
-        style={{
+<input
+  value={input}
+  onChange={(e) => setInput(e.target.value)}
+  onKeyDown={(e) => {
+    if (e.key === "Enter") {
+      handleAddTask();
+    }
+  }}
+  style={{
     color: "white",
     padding: "12px",
     backgroundColor: "black",
@@ -83,7 +85,10 @@ const App = () => {
     borderRadius: "7px",
     marginRight: "8px",
   }}
-        type="text" placeholder='Create a new task...'/>
+  type="text"
+  placeholder="Create a new task..."
+/>
+
 
         <button
         onClick={handleAddTask}
