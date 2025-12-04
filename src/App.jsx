@@ -1,22 +1,35 @@
 import React from 'react'
 
+
 const App = () => {
+
+  
+
   return (
-    <div>
+    <div
+    style={{
+      width: "70%",
+        minWidth: "300px",
+        maxWidth: "800px",
+         margin: "0 auto",
+        marginTop: "50px",
+    }}
+    >
       <div
-      style={{
-        backgroundColor: "#161B21",
-        margin: "0 auto",
-        marginTop: "50px", 
-        padding: "20px",
-        border: "1px solid gray",
-        width: "800px",
-        textAlign: "left",
-        minHeight: "200px",
-        borderRadius: "4px",
-        fontFamily:
-          "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-      }}
+     style={{
+    backgroundColor: "#161B21",
+    margin: "0 auto",
+    marginTop: "50px",
+    padding: "20px",
+    border: "1px solid gray",
+    width: "100%",
+    maxWidth: "800px",
+    textAlign: "left",
+    minHeight: "200px",
+    borderRadius: "4px",
+    fontFamily:
+      "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+  }}
       >
         <div
         style={{
@@ -35,7 +48,7 @@ const App = () => {
           }}
           >
             <span>❗</span>
-            <span>Issues</span>
+            <span>GitHub's Theme</span>
           </div>
 
         </div>
@@ -44,14 +57,15 @@ const App = () => {
 
         <input
         style={{
-          color: "white",
-          padding: "12px",
-          backgroundColor: "black",
-          margin: "6px",
-          border: "none",
-          width: "700px",
-          borderRadius: "7px",
-        }}
+    color: "white",
+    padding: "12px",
+    backgroundColor: "black",
+    margin: "6px",
+    border: "none",
+    width: "90%",
+    borderRadius: "7px",
+    marginRight: "8px",
+  }}
         type="text" placeholder='Create a new task...'/>
 
         <button
