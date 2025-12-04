@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 const App = () => {
 
+  const [tasks, setTasks] = useState([]);
+  const [input, setInput] = useState("");
+
+  const handleAddTask = () => {
+    const trimmed = input.trim();
+     
+    if(!trimmed) return;
+
+    setTasks([...tasks, trimmed]);
+    setInput('');
   
+
+  }
+
 
   return (
     <div
@@ -56,6 +69,10 @@ const App = () => {
         <div>
 
         <input
+        value={setInput}
+        onChange={(e) => {
+            setInput(e.target.value)
+        }}
         style={{
     color: "white",
     padding: "12px",
@@ -69,6 +86,7 @@ const App = () => {
         type="text" placeholder='Create a new task...'/>
 
         <button
+        onClick={handleAddTask}
         style={{
           backgroundColor: "green",
           border: "none",
