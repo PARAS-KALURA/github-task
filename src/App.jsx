@@ -111,7 +111,7 @@ onKeyDown={(e) => {
         <hr style={{ border: "1px solid #30363d", marginTop: "10px" }} />
 
 
-       <p
+       {tasks.length === 0? ( <p
        style={{
         textAlign: "center",
         color: "#6e7681",
@@ -119,7 +119,15 @@ onKeyDown={(e) => {
        }}
        >
         No tasks yet — create one above.
-       </p>
+       </p>): (
+        <ul>
+          {tasks.map((task,index)=> {
+            <li key={index}>{task}</li>
+          })}
+        </ul>
+       )}
+       
+      
 
       </div>
     </div>
