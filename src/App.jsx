@@ -124,6 +124,7 @@ onKeyDown={(e) => {
 <ul
 style={{
   listStyle: "none",
+  gap: "10px",
   display: "flex",
   flexDirection: "column",
   marginTop: "16px",
@@ -132,10 +133,37 @@ style={{
   {tasks.map((task,index) => {
    return <li
    style={{
+    transition: "background 0.2s",
     border: "1px solid #30363d",
-    padding: "5px",
+    padding: "6px",
+    borderRadius: "6px",
+    cursor: "pointer",
+    color: "white",
+    backgroundColor: "#0d1117",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
    }}
-   key={index} >{task}</li>
+onMouseEnter={(e) => (e.target.style.background = "#1d2633")}
+onMouseLeave={(e) => (e.target.style.background = "#0d1117")}
+   
+
+
+
+   key={index} >{task}
+
+   <button
+   style={{
+    backgroundColor: 'red',
+    color: "white",
+    border: "none",
+    padding:"3px",
+    borderRadius:"3px",
+    cursor: "pointer",
+   }}
+   >Delete</button>
+   
+   </li>
   })}
 </ul>
 
