@@ -18,9 +18,10 @@ const App = () => {
   }
 
   const handleDeleteTask = (index) => {
-    setTasks(tasks.filter())
-    
-  }
+  const updatedTasks = [...tasks];
+  updatedTasks.splice(index,1);
+  setTasks(updatedTasks);    
+  };
 
 
   return (
