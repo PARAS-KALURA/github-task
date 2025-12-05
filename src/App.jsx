@@ -124,13 +124,17 @@ onKeyDown={(e) => {
 <ul
 style={{
   listStyle: "none",
-
-  paddingBottom: "9px",
+  display: "flex",
+  flexDirection: "column",
   marginTop: "16px",
 }}
 >
   {tasks.map((task,index) => {
    return <li
+   style={{
+    border: "1px solid #30363d",
+    padding: "5px",
+   }}
    key={index} >{task}</li>
   })}
 </ul>
