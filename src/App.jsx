@@ -111,22 +111,33 @@ onKeyDown={(e) => {
         <hr style={{ border: "1px solid #30363d", marginTop: "10px" }} />
 
 
-       {tasks.length === 0? ( <p
+      {tasks.length === 0? ( <p
        style={{
         textAlign: "center",
         color: "#6e7681",
-        padding: "30px 0",   
+        padding: "31px 0",   
        }}
        >
         No tasks yet — create one above.
-       </p>): (
-        <ul>
-          {tasks.map((task,index)=> {
-            <li key={index}>{task}</li>
-          })}
-        </ul>
-       )}
-       
+       </p>
+):  (
+<ul
+style={{
+  listStyle: "none",
+
+  paddingBottom: "9px",
+  marginTop: "16px",
+}}
+>
+  {tasks.map((task,index) => {
+   return <li
+   key={index} >{task}</li>
+  })}
+</ul>
+
+)  }
+
+              
       
 
       </div>
