@@ -47,7 +47,7 @@ const App = () => {
           minHeight: "200px",
           borderRadius: "4px",
           fontFamily:
-            "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+          "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
         }}
       >
         <div
@@ -164,7 +164,7 @@ const App = () => {
                     backgroundColor: 'red',
                     color: "white",
                     border: "none",
-                    padding: "3px",
+                    padding: "4px",
                     borderRadius: "3px",
                     cursor: "pointer",
 
