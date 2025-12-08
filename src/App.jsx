@@ -1,18 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const App = () => {
  
   const[text,setText] = useState("");
 
-  function handleChange(e) {
-    setText(e.target.value);
-  }
+   useEffect(() => {
+    const saved = localStorage.getItem("savedItem");
+    if(saved) {
+      setText(saved);
+    }
+  });
+
+    useEffect(() => {
+    localStorage.setItem("savedText", text);
+    
+  },[text]);
+
 
   return (
     <div>
       <input type="text"
       value={text}
-      onChange={handleChange}
+      onChange={(e) => setText(e.target.value)}
       />
       <p>You typed: {text}</p>
     </div>
