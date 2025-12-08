@@ -1,24 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import { useFormStatus } from 'react-dom'
+import React, { useState } from 'react'
 
 const App = () => {
-  
-  const [count, setCount] = useState(0);
+ 
+  const[text,setText] = useState("");
 
-  useEffect(() => {
-     document.title = `Your Count Count: ${count}`;
-  },[count])
+  function handleChange(e) {
+    setText(e.target.value);
+  }
 
   return (
     <div>
-      <h1
-      style={{
-        color: "white",
-      }}
-      >Count:{count}</h1>
-      <button
-      onClick={() => setCount(count+1)}
-      >Increase</button>
+      <input type="text"
+      value={text}
+      onChange={handleChange}
+      />
+      <p>You typed: {text}</p>
     </div>
   )
 }
