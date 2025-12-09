@@ -5,6 +5,8 @@ const App = () => {
    const[imageUrl, setImageUrl] = useState("");
 
    const generateImage = async() => {
+
+    
     const response = await fetch("https://picsum.photos/400");
     setImageUrl(response.url);
    }
@@ -30,10 +32,20 @@ const App = () => {
       padding: "7px",
       borderRadius: "5px",
       border: "none",
+      cursor: "pointer",
      }}
      >Generate Image</button>
 
-     <img src="{imageUrl}" alt="img" />
+
+     <img
+     style={{
+      borderRadius: "20px",
+      border: "2px solid gray",
+      padding: "10px",
+     }}
+     src={imageUrl} alt="image" />
+
+    
 
     </div>
   )
