@@ -1,78 +1,47 @@
-import React, { useState } from "react";
+import React from "react";
 
 const App = () => {
-  const [imageUrl, setImageUrl] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const generateImage = async () => {
-    try {
-      setError("");
-      setLoading(true);
-
-      const response = await fetch("https://picsum.photos/400");
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch image. Try again.");
-      }
-
-      setImageUrl(response.url);
-
-    } catch (err) {
-      setImageUrl("");
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
-    <div
-      style={{
-        height: "100vh",
-        width: "100vw",
-        display: "flex",
-        marginTop: "10px",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-        gap: "10px",
-        background: "#111",
-        color: "white",
-      }}
-    >
-      <h1>Random Image Generator</h1>
-
-      <button
-        onClick={generateImage}
+    <>
+      <h2
         style={{
-          padding: "10px 18px",
-          background: "#4CAF50",
-          borderRadius: "6px",
-          border: "none",
-          cursor: "pointer",
-          fontSize: "16px",
           color: "white",
+          textAlign: "center",
+          fontSize: "40px",
+          marginBottom: "20px",
         }}
       >
-        {loading ? "Please wait..." : "Generate Image"}
-      </button>
+        Weather App
+      </h2>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
-
-      {imageUrl && !loading && (
-        <img
-          src={imageUrl}
-          alt="Random"
+      <div
+        style={{
+          borderRadius: "10px",
+          textAlign: "center",
+          border: "2px solid gray",
+          padding: "20px",
+          width: "90vw",
+          maxWidth: "400px",
+          margin: "0 auto",
+          backgroundColor: "#2a2a2a",
+        }}
+      >
+        <input
+          placeholder="Search City..."
           style={{
-            width: "400px",
-            borderRadius: "12px",
-            border: "2px solid #888",
-            padding: "10px",
+            width: "80%",
+            padding: "12px",
+            borderRadius: "10px",
+            color: "black",
+            backgroundColor: "white",
+            fontSize: "18px",
+            border: "none",
+            outline: "none",
           }}
+          type="text"
         />
-      )}
-    </div>
+      </div>
+    </>
   );
 };
 
