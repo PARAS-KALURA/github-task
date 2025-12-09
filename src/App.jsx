@@ -9,11 +9,15 @@ const App = () => {
     if(saved) {
       setText(saved);
     }
-  });
+  },[]);
 
     useEffect(() => {
-    localStorage.setItem("savedText", text);
+    localStorage.setItem("savedItem", text);
     
+  },[text]);
+
+  useEffect(() => {
+     document.title = `Text: ${text}`
   },[text]);
 
 
