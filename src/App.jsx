@@ -1,41 +1,23 @@
-import React, { useEffect, useRef, useState } from 'react'
-
-
+import React from 'react'
 
 const App = () => {
-
- const[number, setNumber] = useState(0);
-
-
- const renderCount = useRef(1);
-
-
-
-function handleClick() {
-  setNumber(n => n + 1);
-  
-} 
-
- useEffect(() => {
-   console.log("Renrenders");
-
-  renderCount.current = renderCount.current + 1;
-
-  console.log("Render Count:", renderCount.current);   
- })
-
-
   return (
-    <div>
-      <button
-      onClick={handleClick}
-      >Click me!</button>
-     
-     <p>{number}</p>
-     <p>Component Rendered: {renderCount.current} times</p>
+    <>
+    <div className='flex justify-center' >
+    
+    <div className='border-2 border-gray-500 inline-flex  py-3 px-6  justify-center items-center  mt-5 rounded-md  ' >
+      <h2 className='  text-3xl font-bold'>Weather App</h2>
+
+      <input type="text" placeholder='Seach City...' />
 
     </div>
+
+    </div>
+    
+    </>
   )
 }
 
 export default App
+
+
