@@ -18,7 +18,7 @@ const App = () => {
  );
     
     if(!response.ok) {
-      throw new Error("City not found");
+      throw new Error("City not found ");
     }
 
     const data = await response.json();
